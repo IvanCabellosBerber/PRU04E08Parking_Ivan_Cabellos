@@ -8,18 +8,11 @@
       <change afterPath="$PROJECT_DIR$/../HangMan/src/Word.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../HangMan/src/WordDisplay.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../HangMan/src/WordFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../txtToCSV/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../txtToCSV/src/PRU04E02_Ivan_Cabellos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestionParking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gestionParking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08Parking_Ivan_Cabellos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08Parking_Ivan_Cabellos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08TestParking_Ivan_Cabellos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08TestParking_Ivan_Cabellos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,33 +24,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java">
+        <entry file="file://$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+            <state relative-caret-position="900">
+              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1094#1108#0" expanded="true" />
-                <element signature="e#1622#1623#0" expanded="true" />
-                <element signature="e#1662#1663#0" expanded="true" />
-                <element signature="e#1885#1886#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
-                <element signature="e#2179#2180#0" expanded="true" />
-                <element signature="e#2211#2212#0" expanded="true" />
-                <element signature="e#2645#2646#0" expanded="true" />
-                <element signature="e#2681#2682#0" expanded="true" />
-                <element signature="e#2737#2738#0" expanded="true" />
-                <element signature="e#2787#2788#0" expanded="true" />
+                <element signature="e#1587#1588#0" expanded="true" />
+                <element signature="e#1683#1684#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java">
+        <entry file="file://$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+            <state relative-caret-position="340">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -79,6 +63,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" />
         <option value="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" />
+        <option value="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" />
+        <option value="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" />
       </list>
     </option>
   </component>
@@ -110,12 +96,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549460838698" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549538491298" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -129,29 +115,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PRU04E08TestParking_Ivan_Cabellos">
-    <configuration name="PRU04E08Parking_Ivan_Cabellos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PRU04E08Parking_Ivan_Cabellos" />
+  <component name="RunManager" selected="Application.PRU04E04ParkingTest_Ivan_Cabellos">
+    <configuration name="PRU04E04ParkingTest_Ivan_Cabellos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PRU04E04ParkingTest_Ivan_Cabellos" />
       <module name="gestionParking" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PRU04E08TestParking_Ivan_Cabellos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PRU04E08TestParking_Ivan_Cabellos" />
+    <configuration name="PRU04E05Parking_Ivan_Cabellos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PRU04E05Parking_Ivan_Cabellos" />
       <module name="gestionParking" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.PRU04E08Parking_Ivan_Cabellos" />
-      <item itemvalue="Application.PRU04E08TestParking_Ivan_Cabellos" />
+      <item itemvalue="Application.PRU04E05Parking_Ivan_Cabellos" />
+      <item itemvalue="Application.PRU04E04ParkingTest_Ivan_Cabellos" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PRU04E08TestParking_Ivan_Cabellos" />
-        <item itemvalue="Application.PRU04E08Parking_Ivan_Cabellos" />
+        <item itemvalue="Application.PRU04E04ParkingTest_Ivan_Cabellos" />
+        <item itemvalue="Application.PRU04E05Parking_Ivan_Cabellos" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +158,7 @@
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -180,9 +166,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2945055" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.032967035" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3978022" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -198,33 +184,25 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java">
+    <entry file="file://$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+        <state relative-caret-position="340">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java">
+    <entry file="file://$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+        <state relative-caret-position="900">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1094#1108#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
-            <element signature="e#1662#1663#0" expanded="true" />
-            <element signature="e#1885#1886#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#2645#2646#0" expanded="true" />
-            <element signature="e#2681#2682#0" expanded="true" />
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2787#2788#0" expanded="true" />
+            <element signature="e#1587#1588#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
           </folding>
         </state>
       </provider>
