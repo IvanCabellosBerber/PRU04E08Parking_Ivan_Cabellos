@@ -38,7 +38,7 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
     //GETTERS AND SETTERS
 
-    // Getters para las plazas ==========================================================================================
+    // Getters para las plazas =========================================================================================
     // Getter para plazas ocupadas
     public int getPlacesOcupades() {
         return (cochesDentroDelParkingNormal.size() + cochesDentroDeMinusvalidos.size());
@@ -58,53 +58,141 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
     public int entraCotxe(String matricula) throws Exception{
 
-        byte posicionCoche = 1;
-        for (int i = 0; i < lugaresReservados.length; i++) {
+        try {
 
-            if (lugaresReservados[i] == 0){
-                lugaresReservados[i] = posicionCoche;
-                cochesDentroDelParkingNormal.put(matricula, posicionCoche);
-                break;
+            comprovarMatricula(matricula);
+            compruebaSitioNormal();
+
+            if (entraGarrulo()){
+                entraCotxeDiscapacitat(matricula);
+            } else {
+                byte posicionCoche = 1;
+                for (int i = 0; i < lugaresReservados.length; i++) {
+
+                    if (lugaresReservados[i] == 0){
+                        lugaresReservados[i] = posicionCoche;
+                        cochesDentroDelParkingNormal.put(matricula, posicionCoche);
+                        break;
+                    }
+                    posicionCoche++;
+                }
+                return posicionCoche;
             }
-            posicionCoche++;
+
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("No se ha podido meter el coche");
         }
-        return posicionCoche;
+
+        return -1;
 
     }
 
     public int entraCotxeDiscapacitat(String matricula) throws Exception{
 
-        byte posicionCocheMinusvalido = 1;
-        for (int i = 0; i < lugaresReservadosMinusvalidos.length; i++) {
 
-            if (lugaresReservadosMinusvalidos[i] == 0){
-                lugaresReservadosMinusvalidos[i] = posicionCocheMinusvalido;
-                cochesDentroDeMinusvalidos.put(matricula, posicionCocheMinusvalido);
-                break;
+        try {
+            comprovarMatricula(matricula);
+            compruebaSitioDiscapacitados();
+            byte posicionCocheMinusvalido = 1;
+            for (int i = 0; i < lugaresReservadosMinusvalidos.length; i++) {
+
+                if (lugaresReservadosMinusvalidos[i] == 0){
+                    lugaresReservadosMinusvalidos[i] = posicionCocheMinusvalido;
+                    cochesDentroDeMinusvalidos.put(matricula, posicionCocheMinusvalido);
+                    break;
+                }
+                posicionCocheMinusvalido++;
+
             }
-            posicionCocheMinusvalido++;
-
+            return posicionCocheMinusvalido;
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("No se ha podido meter el coche dentro");
         }
-        return posicionCocheMinusvalido;
 
+        return -1;
+
+    }
+
+    private void compruebaSitioNormal(){
+
+        try {
+            if (cochesDentroDelParkingNormal.size() == lugaresReservados.length){
+                throw new Exception();
+            } else if (cochesDentroDelParkingNormal.size() == (lugaresReservados.length - 5)){
+                System.out.println();
+                System.out.println("======================================================");
+                System.out.println("El parking esta casi lleno, le costará encontrar sitio");
+                System.out.println("======================================================");
+                System.out.println();
+            }
+        } catch (Exception e){
+            System.out.println("El sitio esta FULL, prueba de ir a otro parking");
+        }
+
+    }
+
+    private void compruebaSitioDiscapacitados() throws Exception {
+
+        try {
+            if (cochesDentroDeMinusvalidos.size() == lugaresReservadosMinusvalidos.length){
+                throw new Exception();
+            } else if (cochesDentroDeMinusvalidos.size() == (lugaresReservadosMinusvalidos.length - 1)){
+                System.out.println("El parking de minusválidos esta casi lleno, le costará encontrar sitio");
+            }
+        } catch (Exception e){
+            System.out.println("El sitio para minusválidos esta FULL, prueba de ir al parking normal");
+            entraCotxe(matricula);
+        }
+
+    }
+
+    private boolean entraGarrulo(){
+
+        try {
+            int posibleGarrulo = (int) ((Math.random() * 100) + 1);
+            int porcentajeDeGarrulos = 2;
+
+            if (posibleGarrulo <= porcentajeDeGarrulos) {
+                System.out.println("GARRULO DETECTED!");
+                return true;
+            }
+
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("Matricula no correcta del garrulo");
+        }
+
+        return false;
     }
 
     public void surtCotxe (String matricula) throws Exception{
 
-        this.matricula = null;
-        cochesDentroDelParkingNormal.remove(matricula);
+        try {
+            this.matricula = null;
+            cochesDentroDelParkingNormal.remove(matricula);
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("No se ha podido encontrar la matricula, introducela de nuevo");
+        }
 
     }
 
     public void surtCotxeDiscapacitat (String matricula) throws Exception{
 
-        this.matricula = null;
-        cochesDentroDeMinusvalidos.remove(matricula);
+        try {
+            this.matricula = null;
+            cochesDentroDeMinusvalidos.remove(matricula);
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("No se ha podido encontrar la matricula, introducela de nuevo");
+        }
 
     }
     //==================================================================================================================
 
-    //Metodo para leer matriculas desde un fichero
+    //Metodo para leer matriculas desde un fichero =====================================================================
     public void llegirMatricules (String path){
         //TODO a traves de un fichero ir guardando las matriculas que nos pasen
     }
@@ -112,5 +200,38 @@ public class PRU04E05Parking_Ivan_Cabellos {
     public void guardarMatricules (String path){
         //TODO tiene que guardas las amtriculas que hay en el parking dentro de un fichero
     }
+
+    private void comprovarMatricula(String matricula) throws Exception {
+
+        try {
+
+            //Comprobar si cumple con la siguiente expresion regular: [0-9]{4}[A-Z]{3}
+            if (matricula.length() != 7) throw new Exception();
+
+            for (int i = 0; i < matricula.length(); i++) {
+                if (i <= 3){
+                    if (!(matricula.charAt(i) >= 48 && matricula.charAt(i) <= 57)){
+                        throw new Exception();
+                    }
+                } else {
+                    if (!(matricula.charAt(i) >= 65 && matricula.charAt(i) <= 90)){
+                        throw new Exception();
+                    }
+                }
+            }
+
+            System.out.println("Matricula validada");
+
+        } catch (Exception e){
+            System.err.println();
+            System.out.println("La matricula es incorrecta, vuelve a introducirla para comprobarla");
+            String matriculaNueva = sc.next();
+            comprovarMatricula(matriculaNueva);
+        }
+
+
+    }
+
+    //==================================================================================================================
 
 }

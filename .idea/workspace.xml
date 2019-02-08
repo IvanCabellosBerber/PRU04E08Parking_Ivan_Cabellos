@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb30269e-bd2a-4de7-85ba-7263dfa1ecde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/Alphabet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/Gallows.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/HangMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/WordDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HangMan/src/WordFactory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../txtToCSV/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../txtToCSV/src/PRU04E02_Ivan_Cabellos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08Parking_Ivan_Cabellos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gestionParking/PRU04E08TestParking_Ivan_Cabellos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,25 +19,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state relative-caret-position="595">
+              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1587#1588#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="663">
+              <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +60,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/PRU04E08TestParking_Ivan_Cabellos.java" />
         <option value="$PROJECT_DIR$/src/PRU04E08Parking_Ivan_Cabellos.java" />
-        <option value="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" />
         <option value="$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java" />
+        <option value="$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java" />
       </list>
     </option>
   </component>
@@ -96,12 +93,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549538491298" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549622472647" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -152,13 +149,21 @@
       <option name="presentableId" value="Default" />
       <updated>1549299367084</updated>
     </task>
+    <task id="LOCAL-00001" summary="seguir en clase">
+      <created>1549539971644</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549539971644</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -187,22 +192,27 @@
       <window_info anchor="right" id="Maven" order="8" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="seguir en clase" />
+    <option name="LAST_COMMIT_MESSAGE" value="seguir en clase" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java">
+    <entry file="file://$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="595">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PRU04E05Parking_Ivan_Cabellos.java">
+    <entry file="file://$PROJECT_DIR$/src/PRU04E04ParkingTest_Ivan_Cabellos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+        <state relative-caret-position="663">
+          <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
           </folding>
         </state>
       </provider>
