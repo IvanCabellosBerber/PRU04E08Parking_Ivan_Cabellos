@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -19,11 +20,16 @@ public class PRU04E05Parking_Ivan_Cabellos {
      *
      * */
 
+    //ATRIBUTOS PARA RESCATAR Y IMPRIMIR EN FICHERO
+    private static BufferedReader br;
+    private static BufferedWriter bw;
+
     //PLAZAS DE PARKING
     private static int[] lugaresReservados;
     private static int[] lugaresReservadosMinusvalidos;
-    private static HashMap<String, Byte> cochesDentroDelParkingNormal = new HashMap<String, Byte>();
-    private static HashMap<String, Byte> cochesDentroDeMinusvalidos = new HashMap<String, Byte>();
+    private static HashMap<String, Integer> cochesDentroDelParkingNormal = new HashMap<String, Integer>();
+    private static HashMap<String, Integer> cochesDentroDeMinusvalidos = new HashMap<String, Integer>();
+    private TipusPlacesParking tipusPlacesParking;
 
     //ATRIBUTOS DE LOS COCHES
     private String matricula;
@@ -40,13 +46,36 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
     // Getters para las plazas =========================================================================================
     // Getter para plazas ocupadas
-    public int getPlacesOcupades() {
-        return (cochesDentroDelParkingNormal.size() + cochesDentroDeMinusvalidos.size());
+    public int getPlacesOcupades(TipusPlacesParking tipusPlacesParking) {
+
+        switch (tipusPlacesParking){
+            case no_minusvalido:
+                return cochesDentroDelParkingNormal.size();
+            case minusvalido:
+                return cochesDentroDeMinusvalidos.size();
+        }
+
+        return Integer.parseInt(null);
     }
     // Getter para plazas libres
-    public int getPlacesLliures() {
-        return ((lugaresReservados.length - cochesDentroDelParkingNormal.size()) +
-                (lugaresReservadosMinusvalidos.length - cochesDentroDeMinusvalidos.size()));
+    public int getPlacesLliures(TipusPlacesParking tipusPlacesParking) {
+
+        switch (tipusPlacesParking){
+            case no_minusvalido:
+                return lugaresReservados.length - cochesDentroDelParkingNormal.size();
+            case minusvalido:
+                return lugaresReservadosMinusvalidos.length - cochesDentroDeMinusvalidos.size();
+        }
+
+        return Integer.parseInt(null);
+    }
+
+    public static HashMap<String, Integer> getCochesDentroDelParkingNormal() {
+        return cochesDentroDelParkingNormal;
+    }
+
+    public static HashMap<String, Integer> getCochesDentroDeMinusvalidos() {
+        return cochesDentroDeMinusvalidos;
     }
 
     // =================================================================================================================
@@ -60,18 +89,21 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
         try {
 
+            matricula = matricula.toUpperCase();
+
             comprovarMatricula(matricula);
             compruebaSitioNormal();
 
             if (entraGarrulo()){
                 entraCotxeDiscapacitat(matricula);
             } else {
-                byte posicionCoche = 1;
+                Integer posicionCoche = 1;
                 for (int i = 0; i < lugaresReservados.length; i++) {
 
                     if (lugaresReservados[i] == 0){
                         lugaresReservados[i] = posicionCoche;
                         cochesDentroDelParkingNormal.put(matricula, posicionCoche);
+                        this.tipusPlacesParking = TipusPlacesParking.no_minusvalido;
                         break;
                     }
                     posicionCoche++;
@@ -92,14 +124,18 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
 
         try {
+
+            matricula = matricula.toUpperCase();
+
             comprovarMatricula(matricula);
             compruebaSitioDiscapacitados();
-            byte posicionCocheMinusvalido = 1;
+            Integer posicionCocheMinusvalido = 1;
             for (int i = 0; i < lugaresReservadosMinusvalidos.length; i++) {
 
                 if (lugaresReservadosMinusvalidos[i] == 0){
                     lugaresReservadosMinusvalidos[i] = posicionCocheMinusvalido;
                     cochesDentroDeMinusvalidos.put(matricula, posicionCocheMinusvalido);
+                    tipusPlacesParking = TipusPlacesParking.minusvalido;
                     break;
                 }
                 posicionCocheMinusvalido++;
@@ -142,7 +178,7 @@ public class PRU04E05Parking_Ivan_Cabellos {
                 System.out.println("El parking de minusválidos esta casi lleno, le costará encontrar sitio");
             }
         } catch (Exception e){
-            System.out.println("El sitio para minusválidos esta FULL, prueba de ir al parking normal");
+            System.out.println("El sitio para minusválidos esta FULL, prueba de ir al parking no_minusvalido");
             entraCotxe(matricula);
         }
 
@@ -194,11 +230,41 @@ public class PRU04E05Parking_Ivan_Cabellos {
 
     //Metodo para leer matriculas desde un fichero =====================================================================
     public void llegirMatricules (String path){
-        //TODO a traves de un fichero ir guardando las matriculas que nos pasen
+
+        try {
+
+            br = new BufferedReader(new FileReader(path));
+
+            String matricula = br.readLine();
+
+            while (matricula != null){
+                entraCotxe(matricula);
+                matricula = br.readLine();
+            }
+
+            br.close();
+
+        } catch (IOException e){
+            System.err.println();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public void guardarMatricules (String path){
-        //TODO tiene que guardas las amtriculas que hay en el parking dentro de un fichero
+        //TODO tiene que guardas las matriculas que hay en el parking dentro de un fichero
+
+        try {
+            bw = new BufferedWriter(new FileWriter(path));
+
+
+
+        } catch (IOException e){
+            System.err.println();
+        }
+
     }
 
     private void comprovarMatricula(String matricula) throws Exception {

@@ -1,10 +1,10 @@
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 
 public class PRU04E04ParkingTest_Ivan_Cabellos {
 
     private static Scanner sc = new Scanner(System.in).useDelimiter("\\n");
     private static PRU04E05Parking_Ivan_Cabellos parking_ivan_cabellos = crearParking();
+
     public static void main(String[] args) {
 
         int numMenu = menu();
@@ -19,7 +19,7 @@ public class PRU04E04ParkingTest_Ivan_Cabellos {
 
     private static PRU04E05Parking_Ivan_Cabellos crearParking(){
         System.out.println("Primero de todo tienes que crear un parking, o si quieres puedes usar uno predeterminado");
-        System.out.println("Si quieres crear uno dime cuantas plazas normal/minusvalidos quieres, si quieres uno " +
+        System.out.println("Si quieres crear uno dime cuantas plazas no_minusvalido/minusvalidos quieres, si quieres uno " +
                 "predeterminado introduce 'default'");
 
         String controlParking = sc.next().toUpperCase();
@@ -55,17 +55,17 @@ public class PRU04E04ParkingTest_Ivan_Cabellos {
         System.out.println("| [4] Sacar coche del parking                        |");
         System.out.println("| [5] Sacar un coche de discapacitados del parking   |");
         System.out.println("| [6] Mostrar coches dentro del parking              |");
-        System.out.println("| [7] Mostrar coches dentro de los minusválidos      |");
-        System.out.println("| [8] Guardar las matrículas del parking en fichero  |");
+        System.out.println("| [7] Guardar las matrículas del parking en fichero  |");
         System.out.println("|                                                    |");
-        System.out.println("| [9] Salir del menú                                 |");
+        System.out.println("| [8] Salir del menú                                 |");
         System.out.println("|                                                    |");
         System.out.println("|====================================================|");
 
         String controlMenu = sc.next();
-        int numControl = Integer.parseInt(controlMenu);
+
 
         try {
+            int numControl = Integer.parseInt(controlMenu);
             if (numControl >= 1 && numControl <= 9) {
                 return numControl;
             } else throw new Exception();
@@ -88,47 +88,91 @@ public class PRU04E04ParkingTest_Ivan_Cabellos {
                 case 1:
                     System.out.println("Has seleccionado meter las matriculas por fichero");
                     System.out.println("[TODO]");
+                    System.out.println("Dime el path del fichero donde estan las matriculas: ");
+                    String ficheroMatriculas = sc.next();
+
+                    try {
+                        parking_ivan_cabellos.llegirMatricules(ficheroMatriculas);
+                        System.out.println("Parece que funciono todo correcto");
+                    } catch (Exception e){
+                        System.out.println("Algo no fue bien, vuelve a introducir el fichero");
+                        break;
+                    }
+                    
                     break;
 
                 case 2:
                     System.out.println("Has seleccionado meter un coche en el parking");
-                    System.out.println("=============================================");
-                    System.out.println("Dime la matricula del coche que ha entrado:  ");
+                    System.out.println("==============================================================");
+                    System.out.println("Dime la matricula del coche que ha entrado, 'menu' para volver");
                     String matriculaNueva = sc.next();
-                    meterCocheParking(matriculaNueva);
+                    if (matriculaNueva.equals("menu")){
+                        break;
+                    } else meterCocheParking(matriculaNueva);
                     break;
 
                 case 3:
                     System.out.println("Has seleccionado meter un coche en el parking de minusválidos");
-                    System.out.println("=============================================================");
-                    System.out.println("Dime la matricula del coche que ha entrado:  ");
+                    System.out.println("==============================================================");
+                    System.out.println("Dime la matricula del coche que ha entrado, 'menu' para volver");
                     String matriculaNuevaMinusvalidos = sc.next();
-                    meterCocheMinusvalidos(matriculaNuevaMinusvalidos);
+
+                    if (matriculaNuevaMinusvalidos.equals("menu")){
+                        break;
+                    } else meterCocheMinusvalidos(matriculaNuevaMinusvalidos);
+
                     break;
 
                 case 4:
                     System.out.println("Has seleccionado sacar un coche del parking");
-                    System.out.println("===========================================");
-                    System.out.println("Dime la matricula del coche que ha entrado:");
+                    System.out.println("=============================================================");
+                    System.out.println("Dime la matricula del coche que ha salido, 'menu' para volver");
                     String matriculaNuevaSacar = sc.next();
-                    sacarCocheParkingNormal(matriculaNuevaSacar);
+
+                    if (matriculaNuevaSacar.equals("menu")){
+                        break;
+                    } else sacarCocheParkingNormal(matriculaNuevaSacar);
                     break;
 
                 case 5:
                     System.out.println("Has seleccionado sacar un coche del parking");
-                    System.out.println("===========================================");
-                    System.out.println("Dime la matricula del coche que ha entrado:");
+                    System.out.println("==============================================================");
+                    System.out.println("Dime la matricula del coche que ha salido, 'menu' para volver:");
                     String matriculaNuevaSacarMinusvalido = sc.next();
-                    sacarCocheParkingNormal(matriculaNuevaSacarMinusvalido);
+
+                    if (matriculaNuevaSacarMinusvalido.equals("menu")){
+                        break;
+                    } else sacarCocheParkingMinusvalido(matriculaNuevaSacarMinusvalido);
                     break;
 
                 case 6:
-                    System.out.println("===========================================");
-                    System.out.println("   COCHES DENTRO DEL PARKING AHORA MISMO");
-                    System.out.println("         Ahora mismo hay: " + parking_ivan_cabellos.getPlacesOcupades());
-                    System.out.println("===========================================");
-                    System.out.println();
-                    System.out.println();
+
+                    System.out.println("Dime si quieres ver el parking normal o de minusvalidos: ");
+                    String tipoDeParking = sc.next();
+
+                    switch (tipoDeParking){
+                        case "no_minusvalido":
+                            System.out.println("===========================================");
+                            System.out.println("   COCHES DENTRO DEL PARKING AHORA MISMO");
+                            System.out.println("         Ahora mismo hay: " + parking_ivan_cabellos.getPlacesOcupades(TipusPlacesParking.no_minusvalido));
+                            System.out.println("         Quedan: " + parking_ivan_cabellos.getPlacesLliures(TipusPlacesParking.no_minusvalido));
+                            System.out.println("===========================================");
+                            System.out.println();
+                            System.out.println(PRU04E05Parking_Ivan_Cabellos.getCochesDentroDelParkingNormal());
+                            System.out.println();
+                            break;
+
+                        case "minusvalido":
+                            System.out.println("===========================================");
+                            System.out.println("   COCHES DENTRO DEL PARKING AHORA MISMO");
+                            System.out.println("         Ahora mismo hay: " + parking_ivan_cabellos.getPlacesOcupades(TipusPlacesParking.minusvalido));
+                            System.out.println("         Quedan: " + parking_ivan_cabellos.getPlacesLliures(TipusPlacesParking.minusvalido));
+                            System.out.println("===========================================");
+                            System.out.println();
+                            System.out.println(PRU04E05Parking_Ivan_Cabellos.getCochesDentroDelParkingNormal());
+                            System.out.println();
+                            break;
+                    }
             }
 
         } catch (Exception e){
@@ -142,8 +186,6 @@ public class PRU04E04ParkingTest_Ivan_Cabellos {
         try {
             parking_ivan_cabellos.entraCotxe(matricula);
         } catch (Exception e){
-            System.err.println();
-            System.out.println("Introduce la nueva matricula: ");
             String matriculaCorrecta = sc.next();
             meterCocheParking(matriculaCorrecta);
         }
